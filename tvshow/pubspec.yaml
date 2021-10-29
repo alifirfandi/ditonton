@@ -8,13 +8,27 @@ environment:
   flutter: ">=1.17.0"
 
 dependencies:
+  cached_network_image: ^3.0.0
+  core:
+    path: ../core
+  dartz: ^0.10.0
+  equatable: ^2.0.2
   flutter:
     sdk: flutter
+  flutter_bloc: ^7.3.1
+  flutter_rating_bar: ^4.0.0
+  get_it: ^7.2.0
+  http: ^0.13.3
+  rxdart: ^0.27.2
 
 dev_dependencies:
+  analyzer: ^1.7.2
+  build_runner: ^2.0.4
+  flutter_lints: ^1.0.0
+  bloc_test: ^8.3.0
   flutter_test:
     sdk: flutter
-  flutter_lints: ^1.0.0
+  mockito: ^5.0.8
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

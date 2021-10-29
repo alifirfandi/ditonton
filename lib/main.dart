@@ -5,7 +5,6 @@ import 'package:core/core.dart';
 import 'package:movie/domain/usecase/remove_watchlist_movie.dart';
 import 'package:movie/movie.dart';
 import 'package:about/about.dart';
-import 'package:movie/presentation/bloc/detail_movie_bloc.dart';
 import 'package:tvshow/tvshow.dart';
 import 'injection.dart' as di;
 
@@ -69,6 +68,54 @@ class MyApp extends StatelessWidget {
             di.locator<SearchMovies>(),
           ),
         ),
+
+        // TVSHOW
+        BlocProvider<PopularTvBloc>(
+          create: (BuildContext context) => PopularTvBloc(
+            di.locator<GetPopularTv>(),
+          ),
+        ),
+        BlocProvider<NowPlayingTvBloc>(
+          create: (BuildContext context) => NowPlayingTvBloc(
+            di.locator<GetNowPlayingTv>(),
+          ),
+        ),
+        BlocProvider<TopRatedTvBloc>(
+          create: (BuildContext context) => TopRatedTvBloc(
+            di.locator<GetTopRatedTv>(),
+          ),
+        ),
+        BlocProvider<DetailTvBloc>(
+          create: (BuildContext context) => DetailTvBloc(
+            di.locator<GetTvDetail>(),
+          ),
+        ),
+        BlocProvider<RecommendationTvBloc>(
+          create: (BuildContext context) => RecommendationTvBloc(
+            di.locator<GetTvRecommendations>(),
+          ),
+        ),
+        BlocProvider<WatchlistTvBloc>(
+          create: (BuildContext context) => WatchlistTvBloc(
+            di.locator<GetWatchlistTv>(),
+          ),
+        ),
+        BlocProvider<CheckWatchlistTvBloc>(
+          create: (BuildContext context) => CheckWatchlistTvBloc(
+            di.locator<GetWatchlistStatusTv>(),
+          ),
+        ),
+        BlocProvider<ActionWatchlistTvBloc>(
+          create: (BuildContext context) => ActionWatchlistTvBloc(
+            di.locator<SaveWatchlistTv>(),
+            di.locator<RemoveWatchlistTv>(),
+          ),
+        ),
+        BlocProvider<SearchTvBloc>(
+          create: (BuildContext context) => SearchTvBloc(
+            di.locator<SearchTv>(),
+          ),
+        ),
       ],
       child: MaterialApp(
         title: _title,
@@ -98,24 +145,20 @@ class MyApp extends StatelessWidget {
             case MOVIE_WATCHLIST_ROUTE:
               return MaterialPageRoute(builder: (_) => WatchlistMoviesPage());
 
-            // case HomeTvPage.ROUTE_NAME:
-            //   return CupertinoPageRoute(builder: (_) => HomeTvPage());
-            // case PopularTvPage.ROUTE_NAME:
-            //   return CupertinoPageRoute(builder: (_) => PopularTvPage());
-            // case TopRatedTvPage.ROUTE_NAME:
-            //   return CupertinoPageRoute(builder: (_) => TopRatedTvPage());
-            // case TvDetailPage.ROUTE_NAME:
-            //   final id = settings.arguments as int;
-            //   return MaterialPageRoute(
-            //     builder: (_) => TvDetailPage(id: id),
-            //     settings: settings,
-            //   );
-            // case SearchTvPage.ROUTE_NAME:
-            //   return CupertinoPageRoute(builder: (_) => SearchTvPage());
-            // case WatchlistTvPage.ROUTE_NAME:
-            //   return MaterialPageRoute(builder: (_) => WatchlistTvPage());
-            // case AboutPage.ROUTE_NAME:
-            //   return MaterialPageRoute(builder: (_) => AboutPage());
+            // case TVSHOW_POPULAR_ROUTE:
+            //   return MaterialPageRoute(builder: (_) => PopularMoviesPage());
+            // case TVSHOW_TOPRATED_ROUTE:
+            //   return MaterialPageRoute(builder: (_) => TopRatedMoviesPage());
+            case TVSHOW_DETAIL_ROUTE:
+              final id = settings.arguments as int;
+              return MaterialPageRoute(
+                builder: (_) => TvDetailPage(id: id),
+                settings: settings,
+              );
+            case TVSHOW_SEARCH_ROUTE:
+              return MaterialPageRoute(builder: (_) => SearchTvPage());
+            case TVSHOW_WATCHLIST_ROUTE:
+              return MaterialPageRoute(builder: (_) => WatchlistTvPage());
             default:
               return MaterialPageRoute(builder: (_) {
                 return Scaffold(
@@ -143,7 +186,7 @@ class _HomePageState extends State<HomePage> {
 
   static final List<Widget> _widgetOptions = <Widget>[
     MoviePage(),
-    TvshowPage(),
+    TvPage(),
     AboutPage(),
   ];
 

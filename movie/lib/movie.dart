@@ -25,6 +25,7 @@ export 'presentation/bloc/watchlist_movie_bloc.dart';
 export 'presentation/bloc/action_watchlist_movie_bloc.dart';
 export 'presentation/bloc/check_watchlist_movie_bloc.dart';
 export 'presentation/bloc/search_movie_bloc.dart';
+export 'presentation/bloc/detail_movie_bloc.dart';
 
 export 'presentation/pages/movie_detail_page.dart';
 export 'presentation/pages/movie_page.dart';
