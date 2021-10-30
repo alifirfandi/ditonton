@@ -130,10 +130,10 @@ class MyApp extends StatelessWidget {
           switch (settings.name) {
             case HOME_PAGE:
               return MaterialPageRoute(builder: (_) => const HomePage());
-            // case MOVIE_POPULAR_ROUTE:
-            //   return MaterialPageRoute(builder: (_) => PopularMoviesPage());
-            // case MOVIE_TOPRATED_ROUTE:
-            //   return MaterialPageRoute(builder: (_) => TopRatedMoviesPage());
+            case MOVIE_POPULAR_ROUTE:
+              return MaterialPageRoute(builder: (_) => PopularMoviesPage());
+            case MOVIE_TOPRATED_ROUTE:
+              return MaterialPageRoute(builder: (_) => TopRatedMoviesPage());
             case MOVIE_DETAIL_ROUTE:
               final id = settings.arguments as int;
               return MaterialPageRoute(
@@ -145,10 +145,10 @@ class MyApp extends StatelessWidget {
             case MOVIE_WATCHLIST_ROUTE:
               return MaterialPageRoute(builder: (_) => WatchlistMoviesPage());
 
-            // case TVSHOW_POPULAR_ROUTE:
-            //   return MaterialPageRoute(builder: (_) => PopularMoviesPage());
-            // case TVSHOW_TOPRATED_ROUTE:
-            //   return MaterialPageRoute(builder: (_) => TopRatedMoviesPage());
+            case TVSHOW_POPULAR_ROUTE:
+              return MaterialPageRoute(builder: (_) => PopularTvPage());
+            case TVSHOW_TOPRATED_ROUTE:
+              return MaterialPageRoute(builder: (_) => TopRatedTvPage());
             case TVSHOW_DETAIL_ROUTE:
               final id = settings.arguments as int;
               return MaterialPageRoute(
