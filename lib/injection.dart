@@ -6,6 +6,7 @@ import 'package:movie/movie.dart';
 import 'package:tvshow/tvshow.dart';
 
 import 'package:movie/data/datasource/db/database_helper_movie.dart';
+import 'package:core/utils/http_ssl_pinning.dart';
 import 'package:tvshow/data/datasource/db/database_helper_tv.dart';
 
 import 'package:movie/data/datasource/movie_local_data_source.dart';
@@ -126,5 +127,5 @@ void init() {
   locator.registerLazySingleton<DatabaseHelperTv>(() => DatabaseHelperTv());
 
   // external
-  locator.registerLazySingleton(() => http.Client());
+  locator.registerLazySingleton(() => HttpSSLPinning.client);
 }

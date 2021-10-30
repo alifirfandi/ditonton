@@ -4,6 +4,7 @@ export 'styles/colors.dart';
 export 'styles/text_style.dart';
 export 'utils/constants.dart';
 export 'utils/exception.dart';
+export 'utils/http_ssl_pinning.dart';
 export 'utils/failure.dart';
 export 'utils/routes.dart';
 export 'utils/database_helper.dart';

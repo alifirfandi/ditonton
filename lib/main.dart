@@ -8,8 +8,10 @@ import 'package:about/about.dart';
 import 'package:tvshow/tvshow.dart';
 import 'injection.dart' as di;
 
-void main() {
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
   di.init();
+  await HttpSSLPinning.init();
   runApp(const MyApp());
 }
 
