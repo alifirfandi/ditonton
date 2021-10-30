@@ -6,3 +6,4 @@ Last Submission Dicoding Flutter Expert
 - Modularization
 - State Management BLoC
 - Dependency Injection GetIt
+- SSL Pinning
