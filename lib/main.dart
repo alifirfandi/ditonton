@@ -70,8 +70,6 @@ class MyApp extends StatelessWidget {
             di.locator<SearchMovies>(),
           ),
         ),
-
-        // TVSHOW
         BlocProvider<PopularTvBloc>(
           create: (BuildContext context) => PopularTvBloc(
             di.locator<GetPopularTv>(),
@@ -127,6 +125,7 @@ class MyApp extends StatelessWidget {
           textTheme: kTextTheme,
           colorScheme: kColorScheme.copyWith(secondary: kMikadoYellow),
         ),
+        navigatorObservers: [routeObserver],
         home: const HomePage(),
         onGenerateRoute: (RouteSettings settings) {
           switch (settings.name) {
@@ -146,7 +145,6 @@ class MyApp extends StatelessWidget {
               return MaterialPageRoute(builder: (_) => SearchMoviePage());
             case MOVIE_WATCHLIST_ROUTE:
               return MaterialPageRoute(builder: (_) => WatchlistMoviesPage());
-
             case TVSHOW_POPULAR_ROUTE:
               return MaterialPageRoute(builder: (_) => PopularTvPage());
             case TVSHOW_TOPRATED_ROUTE:
@@ -163,7 +161,7 @@ class MyApp extends StatelessWidget {
               return MaterialPageRoute(builder: (_) => WatchlistTvPage());
             default:
               return MaterialPageRoute(builder: (_) {
-                return Scaffold(
+                return const Scaffold(
                   body: Center(
                     child: Text('Page not found :('),
                   ),

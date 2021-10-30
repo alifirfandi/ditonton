@@ -6,6 +6,7 @@ export 'utils/constants.dart';
 export 'utils/exception.dart';
 export 'utils/http_ssl_pinning.dart';
 export 'utils/failure.dart';
+export 'utils/route_observer.dart';
 export 'utils/routes.dart';
 export 'utils/database_helper.dart';
 export 'utils/state_enum.dart';
