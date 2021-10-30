@@ -42,9 +42,13 @@ dependencies:
     path: tvshow
 
 dev_dependencies:
+  analyzer: ^1.7.2
+  build_runner: ^2.0.4
   flutter_lints: ^1.0.0
+  bloc_test: ^8.3.0
   flutter_test:
     sdk: flutter
+  mockito: ^5.0.8
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

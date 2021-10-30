@@ -1,0 +1,29 @@
+{
+    "page": 1,
+    "results": [
+        {
+            "backdrop_path": "/75HgaphatW0PDI3XIHQWZUpbhn6.jpg",
+            "first_air_date": "2017-12-01",
+            "genre_ids": [
+                10765,
+                18,
+                9648,
+                80
+            ],
+            "id": 70523,
+            "name": "Dark",
+            "origin_country": [
+                "DE"
+            ],
+            "original_language": "de",
+            "original_name": "Dark",
+            "overview": "A missing child causes four families to help each other for answers. What they could not imagine is that this mystery would be connected to innumerable other secrets of the small town.",
+            "popularity": 172.664,
+            "poster_path": "/nlTUgbZY1E4Dr5B25zLLkudIaV.jpg",
+            "vote_average": 8.4,
+            "vote_count": 4587
+        }
+    ],
+    "total_pages": 13,
+    "total_results": 250
+}
